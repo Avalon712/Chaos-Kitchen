@@ -10,13 +10,13 @@ namespace ChaosKitchen.UI
     {
         [SerializeField] private Image _timerImg;
         [SerializeField] private TMP_Text _timerTxt;
-        [Range(60,300)]
+        [Range(60, 300)]
         [SerializeField] private int TIMER = 60;
 
         private bool _isStartGame;
         private int _timer;
 
-        public int Time { set => TIMER = value; } 
+        public int Time { set => TIMER = value; }
 
         private void Awake()
         {
@@ -44,7 +44,7 @@ namespace ChaosKitchen.UI
 
         private IEnumerator Timer()
         {
-            while(_timer > 0)
+            while (_timer > 0)
             {
                 while (!_isStartGame) { yield return null; }
 

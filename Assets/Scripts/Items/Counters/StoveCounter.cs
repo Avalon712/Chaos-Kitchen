@@ -24,7 +24,7 @@ namespace ChaosKitchen.Items
         private void PauseGame()
         {
             _isStartGame = false;
-            if(PlaceKitchenObject != null && _cookState!=CookState.Burned)
+            if (PlaceKitchenObject != null && _cookState != CookState.Burned)
                 //关闭声音
                 AudioManager.Instance.StopAudio(EventAudio.Sizzle);
         }
@@ -48,7 +48,7 @@ namespace ChaosKitchen.Items
 
         public override void Interact(PlayerController player, InteractiveEvent interactiveEvent)
         {
-            if(interactiveEvent == InteractiveEvent.PlaceOrTake)
+            if (interactiveEvent == InteractiveEvent.PlaceOrTake)
             {
                 PlaceOrTake(player);
             }
@@ -85,7 +85,7 @@ namespace ChaosKitchen.Items
         private void Update()
         {
             //烤糊了就不允许再进行烤了
-            if(_isStartGame && PlaceKitchenObject != null && _cookState != CookState.Burned)
+            if (_isStartGame && PlaceKitchenObject != null && _cookState != CookState.Burned)
             {
                 Cook(Time.deltaTime);
             }
@@ -94,7 +94,7 @@ namespace ChaosKitchen.Items
         private void Cook(float deltaTime)
         {
             _cookTime += deltaTime;
-            if(_cookTime > _needCookTime)
+            if (_cookTime > _needCookTime)
             {
                 EnterNextCookState();
                 //进入下一个状态后改变颜色
@@ -118,14 +118,14 @@ namespace ChaosKitchen.Items
             //放置新的物品
             Place(KitchenManager.Instance.Get(next));
 
-            if(_cookState == CookState.Cooked)
+            if (_cookState == CookState.Cooked)
             {
                 _warnUI.SetActive(true);
             }
 
             //烤糊了自动"关火"
-            if(_cookState == CookState.Burned)
-            { 
+            if (_cookState == CookState.Burned)
+            {
                 HideCookingEffect();
             }
         }
@@ -149,9 +149,9 @@ namespace ChaosKitchen.Items
             AudioManager.Instance.StopAudio(EventAudio.Sizzle);
         }
 
-        private void SetGameObjectActive(GameObject obj,bool active)
+        private void SetGameObjectActive(GameObject obj, bool active)
         {
-            if(obj.activeSelf != active)
+            if (obj.activeSelf != active)
             {
                 obj.SetActive(active);
             }
@@ -171,6 +171,6 @@ namespace ChaosKitchen.Items
         /// <summary>
         /// 糊
         /// </summary>
-        Burned, 
+        Burned,
     }
 }

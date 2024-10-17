@@ -7,7 +7,7 @@ namespace ChaosKitchen
     {
         private static EventManager _instanced;
 
-        private List<ValueTuple<GameEvent,bool,Action>> _events;
+        private List<ValueTuple<GameEvent, bool, Action>> _events;
 
         private EventManager() { _events = new(); }
 
@@ -15,12 +15,12 @@ namespace ChaosKitchen
         {
             get
             {
-                if(_instanced == null) { _instanced = new(); }
+                if (_instanced == null) { _instanced = new(); }
                 return _instanced;
             }
         }
 
-        public void RegisterEvent(GameEvent gameEvent, Action callback,bool justOneCall = false)
+        public void RegisterEvent(GameEvent gameEvent, Action callback, bool justOneCall = false)
         {
             _events.Add((gameEvent, justOneCall, callback));
         }
@@ -80,5 +80,15 @@ namespace ChaosKitchen
         /// 重新开始游戏
         /// </summary>
         RestartGame,
+
+        /// <summary>
+        /// 开始重新绑定按钮
+        /// </summary>
+        RebindKey_Start,
+
+        /// <summary>
+        /// 结束重新绑定按钮
+        /// </summary>
+        RebindKey_End,
     }
 }

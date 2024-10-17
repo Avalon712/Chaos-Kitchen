@@ -13,7 +13,7 @@ namespace ChaosKitchen.Items
         /// </summary>
         public override void Interact(PlayerController player, InteractiveEvent interactiveEvent)
         {
-            if(interactiveEvent == InteractiveEvent.PlaceOrTake)
+            if (interactiveEvent == InteractiveEvent.PlaceOrTake)
             {
                 //判断玩家手里是否有物品，没有则玩家将获得一个此类型的物品
                 if (player.HoldKitchenObj == null)

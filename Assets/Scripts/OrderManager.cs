@@ -10,7 +10,7 @@ namespace ChaosKitchen
     public sealed class OrderManager : MonoBehaviour
     {
         [SerializeField] private OrderUI _orderUI;
-        [Range(1,5)]
+        [Range(1, 5)]
         [SerializeField] private int _maxMenuCount;
         [SerializeField] private float _interval;
         [Header("所有食谱")]
@@ -22,7 +22,7 @@ namespace ChaosKitchen
         /// <summary>
         /// 玩家成功制作的菜单数量
         /// </summary>
-        public int SuccessNum { get;private set; }
+        public int SuccessNum { get; private set; }
 
         /// <summary>
         /// 所有随机生成的菜单
@@ -70,10 +70,10 @@ namespace ChaosKitchen
 
         private void Update()
         {
-            if(_isStartGame && _maxMenuCount > _menu.Count)
+            if (_isStartGame && _maxMenuCount > _menu.Count)
             {
                 _timer += Time.deltaTime;
-                if(_timer >= _interval)
+                if (_timer >= _interval)
                 {
                     _timer = 0;
                     AutoGenerateMenu();
@@ -98,7 +98,7 @@ namespace ChaosKitchen
                 Recipe recipe = _menu[i];
                 List<KitchenObjectType> types = recipe.recipe;
 
-                if(foods.Count == types.Count)
+                if (foods.Count == types.Count)
                 {
                     for (int j = 0; j < types.Count; j++)
                     {

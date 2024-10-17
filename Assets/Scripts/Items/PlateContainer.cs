@@ -29,7 +29,7 @@ namespace ChaosKitchen.Items
 
         public void ClearFoods()
         {
-            _plateUI.Close();   
+            _plateUI.Close();
             for (int i = 0; i < _foodTemplate.Count; i++)
             {
                 _foodTemplate[i].gameObject.SetActive(false);
@@ -49,7 +49,7 @@ namespace ChaosKitchen.Items
 
         public bool Place(KitchenObject transferObj)
         {
-            if(transferObj.KitchenObjectType != KitchenObjectType.Plate)
+            if (transferObj.KitchenObjectType != KitchenObjectType.Plate)
             {
                 KitchenManager.Instance.Put(transferObj);
                 AddFood(transferObj);

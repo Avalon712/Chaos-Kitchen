@@ -26,6 +26,12 @@
 烹饪菜
 漂亮  错误
 订单列表
+音量
+背景
+交互
+时间
+继续
 1234567890
 qwertyuiopasdfghjklzxcvbnm_
 QWERTYUIOPASDFGHJKLZXCVBNM
+请输入重新绑定的按键

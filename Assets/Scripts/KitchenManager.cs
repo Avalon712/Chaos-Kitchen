@@ -21,13 +21,13 @@ namespace ChaosKitchen
         public KitchenObject Get(KitchenObjectType type)
         {
             KitchenObject obj = _pool.Find(o => o.KitchenObjectType == type);
-            if(obj == null) { obj = CloneKitchenObject(type); }
-            else 
+            if (obj == null) { obj = CloneKitchenObject(type); }
+            else
             {
                 obj.gameObject.SetActive(true);
                 _pool.Remove(obj);
             }
-            
+
             return obj;
         }
 
@@ -44,14 +44,14 @@ namespace ChaosKitchen
         public Sprite GetIcon(KitchenObjectType kitchenObjectType)
         {
             return _prefabs.Find(p => p.KitchenObjectType == kitchenObjectType).Icon;
-        } 
+        }
 
         private KitchenObject CloneKitchenObject(KitchenObjectType type)
         {
             KitchenObject prefab = _prefabs.Find(obj => obj.KitchenObjectType == type);
             if (prefab != null)
             {
-                KitchenObject clone = GameObject.Instantiate(prefab,transform);
+                KitchenObject clone = GameObject.Instantiate(prefab, transform);
                 clone.transform.localPosition = Vector3.zero;
                 return clone;
             }

@@ -15,10 +15,10 @@ namespace ChaosKitchen.Items.Counters
 
         public override void Interact(PlayerController player, InteractiveEvent interactiveEvent)
         {
-            if(interactiveEvent == InteractiveEvent.PlaceOrTake)
+            if (interactiveEvent == InteractiveEvent.PlaceOrTake)
             {
                 KitchenObject hold = player.HoldKitchenObj;
-                if(hold.KitchenObjectType == KitchenObjectType.Plate)
+                if (hold.KitchenObjectType == KitchenObjectType.Plate)
                 {
                     PlateContainer container = hold.gameObject.GetComponent<PlateContainer>();
                     //判断玩家当前的菜是否正确

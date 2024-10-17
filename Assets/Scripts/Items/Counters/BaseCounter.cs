@@ -28,7 +28,7 @@ namespace ChaosKitchen.Items
 
         public Transform PlacePoint => _placePoint;
 
-        public abstract void Interact(PlayerController player,InteractiveEvent interactiveEvent);
+        public abstract void Interact(PlayerController player, InteractiveEvent interactiveEvent);
 
         public virtual bool TransferTo(ITransfer<KitchenObject> receiver)
         {

@@ -5,7 +5,7 @@ namespace ChaosKitchen.Items
     {
         public override void Interact(PlayerController player, InteractiveEvent interactiveEvent)
         {
-            if(interactiveEvent == InteractiveEvent.PlaceOrTake)
+            if (interactiveEvent == InteractiveEvent.PlaceOrTake)
             {
                 //将玩家手中的物品返回对象池
                 player.TransferTo(this);
@@ -19,7 +19,7 @@ namespace ChaosKitchen.Items
         /// <returns></returns>
         public override bool Place(KitchenObject kitchenObject)
         {
-            if(kitchenObject != null)
+            if (kitchenObject != null)
             {
                 KitchenManager.Instance.Put(kitchenObject);
                 AudioManager.Instance.PlayAudio(EventAudio.Trash);

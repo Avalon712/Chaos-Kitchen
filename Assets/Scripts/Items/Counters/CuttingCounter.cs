@@ -27,13 +27,13 @@ namespace ChaosKitchen.Items
             _canvas.transform.forward = Camera.main.transform.forward;
         }
 
-        public override void Interact(PlayerController player,InteractiveEvent interactiveEvent)
+        public override void Interact(PlayerController player, InteractiveEvent interactiveEvent)
         {
-            if(interactiveEvent == InteractiveEvent.PlaceOrTake)
+            if (interactiveEvent == InteractiveEvent.PlaceOrTake)
             {
                 PlaceOrTake(player);
             }
-            else if(interactiveEvent == InteractiveEvent.Cut)
+            else if (interactiveEvent == InteractiveEvent.Cut)
             {
                 CutKitchenObject();
             }
@@ -66,7 +66,7 @@ namespace ChaosKitchen.Items
         private void CutKitchenObject()
         {
             //判断当前柜台上有物品同时不是切割好的物品才允许切割
-            if(PlaceKitchenObject != null && KitchenObjectHelper.CanCutting(PlaceKitchenObject.KitchenObjectType))
+            if (PlaceKitchenObject != null && KitchenObjectHelper.CanCutting(PlaceKitchenObject.KitchenObjectType))
             {
                 if (SetCutProcess(++_cutCount))
                 {
@@ -106,6 +106,6 @@ namespace ChaosKitchen.Items
             _canvas.gameObject.SetActive(false);
         }
 
-        
+
     }
 }

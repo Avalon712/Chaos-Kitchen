@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 namespace ChaosKitchen
@@ -13,15 +12,15 @@ namespace ChaosKitchen
         {
             public EventAudio audioType;
             public AudioClip clip;
-            [Range(0,1)]
+            [Range(0, 1)]
             public float volume = 1;
             public bool justOne;
         }
 
         [SerializeField] private List<GameAudio> _audios;
-        
-        private ValueTuple<bool,AudioSource>[] _players;
-        
+
+        private ValueTuple<bool, AudioSource>[] _players;
+
         public static AudioManager Instance { get; private set; }
 
         private void Awake()
@@ -44,7 +43,7 @@ namespace ChaosKitchen
         }
 
 
-        public void SetVolume(EventAudio audioType,float voluem)
+        public void SetVolume(EventAudio audioType, float voluem)
         {
             GameAudio gameAudio = _audios.Find(a => a.audioType == audioType);
             gameAudio.volume = voluem;
@@ -92,6 +91,7 @@ namespace ChaosKitchen
 
         private IEnumerator CheckIsPlaying()
         {
+            WaitForSeconds waitFor = new WaitForSeconds(0.05f);
             while (true)
             {
                 for (int i = 0; i < _players.Length; i++)
@@ -101,7 +101,7 @@ namespace ChaosKitchen
                         _players[i].Item1 = false;
                     }
                 }
-                yield return new WaitForSeconds(0.05f);
+                yield return waitFor;
             }
         }
 

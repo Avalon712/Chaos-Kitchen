@@ -5,9 +5,9 @@ namespace ChaosKitchen.Items.Counters
 {
     public sealed class PlateCounter : BaseCounter
     {
-        [Range(1,10)]
+        [Range(1, 10)]
         [SerializeField] private int _maxPlateCount = 5;
-        [Range(1,5)]
+        [Range(1, 5)]
         [SerializeField] private float _intervalTime = 2;
 
         private float _timer;
@@ -43,7 +43,7 @@ namespace ChaosKitchen.Items.Counters
 
         public override void Interact(PlayerController player, InteractiveEvent interactiveEvent)
         {
-            if(interactiveEvent == InteractiveEvent.PlaceOrTake)
+            if (interactiveEvent == InteractiveEvent.PlaceOrTake)
             {
                 //如果当前放有物品则将物品给玩家（前提是玩家没有手持物）
                 if (player.HoldKitchenObj == null && PlaceKitchenObject != null)
@@ -56,10 +56,10 @@ namespace ChaosKitchen.Items.Counters
 
         private void Update()
         {
-            if(_isStartGame && PlacePoint.childCount < _maxPlateCount)
+            if (_isStartGame && PlacePoint.childCount < _maxPlateCount)
             {
                 _timer += Time.deltaTime;
-                if(_timer > _intervalTime)
+                if (_timer > _intervalTime)
                 {
                     AutoGeneratePlate();
                     _timer = 0;

@@ -9,12 +9,12 @@ namespace ChaosKitchen.UI
         [SerializeField] private TMP_Text _moveTxt;
         [SerializeField] private Button _closeBtn;
 
-        private void Awake() 
+        private void Awake()
         {
             _closeBtn.onClick.AddListener(CloseUI);
         }
 
-        public void SetMoveTxt(string left,string right,string up,string down)
+        public void SetMoveTxt(string left, string right, string up, string down)
         {
             _moveTxt.text = string.Concat(left, right, up, down);
         }

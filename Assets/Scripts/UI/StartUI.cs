@@ -49,7 +49,7 @@ namespace ChaosKitchen.UI
 
         private IEnumerator StartCountdown()
         {
-            while(_countTime > 0)
+            while (_countTime > 0)
             {
                 _numberTxt.text = _countTime.ToString();
 

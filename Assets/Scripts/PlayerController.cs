@@ -26,7 +26,7 @@ namespace ChaosKitchen
         /// <summary>
         /// 当前玩家手持的物品
         /// </summary>
-        public KitchenObject HoldKitchenObj { get;private set; }
+        public KitchenObject HoldKitchenObj { get; private set; }
 
         private Animator _animator;
 
@@ -78,8 +78,8 @@ namespace ChaosKitchen
             GameInput.Instance.Config.Player.Enable(); //启用玩家的输入
 
             //将物品放到柜台上或从柜台上取走物品
-            GameInput.Instance.Config.Player.PlaceOrTake.performed += 
-                (content)=>Interact(InteractiveEvent.PlaceOrTake);
+            GameInput.Instance.Config.Player.PlaceOrTake.performed +=
+                (content) => Interact(InteractiveEvent.PlaceOrTake);
 
             //将物品进行切割
             GameInput.Instance.Config.Player.Cut.performed +=
@@ -87,7 +87,7 @@ namespace ChaosKitchen
 
         }
 
-        private void FixedUpdate() 
+        private void FixedUpdate()
         {
             if (_isStartGame) { Move(); }
         }
@@ -147,7 +147,7 @@ namespace ChaosKitchen
 
         public bool Place(KitchenObject kitchenObject)
         {
-            if(HoldKitchenObj == null && kitchenObject != null)
+            if (HoldKitchenObj == null && kitchenObject != null)
             {
                 kitchenObject.transform.SetParent(_placePoint);
                 kitchenObject.transform.localPosition = Vector3.zero;

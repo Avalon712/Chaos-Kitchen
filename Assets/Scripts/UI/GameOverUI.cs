@@ -31,7 +31,7 @@ namespace ChaosKitchen.UI
         private void ContinueGame()
         {
             transform.GetChild(0).gameObject.SetActive(false);
-            EventManager.Instance.TriggerEvent(GameEvent.RestartGame); 
+            EventManager.Instance.TriggerEvent(GameEvent.RestartGame);
         }
 
     }

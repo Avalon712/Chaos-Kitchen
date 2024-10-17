@@ -12,7 +12,7 @@ namespace ChaosKitchen.Input
         {
             get
             {
-                if(_instanced == null)
+                if (_instanced == null)
                 {
                     _instanced = new GameObject("Game Input").AddComponent<GameInput>();
                 }
